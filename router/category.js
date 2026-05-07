@@ -1,14 +1,12 @@
 const express=require("express");
 const router=express.Router();
 
-
 router.get("/",(req,res)=>{
-    res.send("Here is the list of books!")
+    res.send(`<h1>Here is the list of all categories.</h1>`);
 })
+
 router.post("/",(req,res)=>{
-    const {bookName,numberOfPage}=req;
-    console.log(req.body);
-    res.send("Book has been added!")
+    res.send(`<h1>A new category has been created.</h1>`);
 })
 
 
