@@ -20,7 +20,21 @@ app.use("/welcome",(req,res,next)=>{
     req.user="Guest"
     console.log("Welcome");
     next()
+});
+
+
+
+// dynamic route 
+//params and query
+//dynmic route should be at top of the route in bottom is not working
+app.get("/running/:username",(req,res)=>{
+    console.log(req.params,"fjvf v fv. vfdffv");
+    console.log(req.query,"fjvf v fv. vfdffv");
+    res.send(`User name is ${req.params.username} and role is ${req.query.role}`)
 })
+
+
+
 
 app.get("/library-2",(req,res)=>{
     res.send("<h1>Library 2 called</h1>")
@@ -68,6 +82,7 @@ app.post("/categories",(req,res)=>{
 app.use((req,res)=>{
     res.status(404).send(`<h1>404 - Page Not Found.</h1>`);
 })
+
 
 
 
