@@ -3,8 +3,15 @@ const app=express();
 const orderRoute=require("./router/order.js")
 const usersRoute=require("./router/users.js")
 const productsRoute=require("./router/products.js")
+const booksRoute=require("./router/books.js")
 let port=4000
 
+
+
+
+
+
+app.use(express.json())
 // app.use((req,res,next)=>{
 //     console.log("Authenticate middleware called");
 //     next();
@@ -35,6 +42,8 @@ let port=4000
 // dynamic route 
 //params and query
 //dynmic route should be at top of the route in bottom is not working
+
+
 app.get("/running/:username",(req,res)=>{
     console.log(req.params,"fjvf v fv. vfdffv");
     console.log(req.query,"fjvf v fv. vfdffv");
@@ -45,6 +54,7 @@ app.get("/running/:username",(req,res)=>{
 app.use("/orders",orderRoute)
 app.use("/users",usersRoute)
 app.use("/products",productsRoute)
+app.use("/books",booksRoute)
 
 
 
