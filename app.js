@@ -19,8 +19,14 @@ app.use("/library-3",(req,res,next)=>{
 app.use("/welcome",(req,res,next)=>{
     req.user="Guest"
     console.log("Welcome");
-    next()
+    next();
 });
+
+
+app.use((req,res,next)=>{
+    console.log(`The request method is ${req.method} and url is ${req.url}`);
+    next();
+})
 
 
 
