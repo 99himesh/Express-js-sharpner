@@ -9,6 +9,9 @@ const runningRoute=require("./router/running.js")
 const courseRoute=require("./router/course.js")
 const studentRoute=require("./router/student.js")
 const homeRoute=require("./router/home.js")
+const userEcommerceRoute=require("./router/userRoute.js")
+const productEcommerceRoute=require("./router/productRoute.js")
+const cartEcommerceRoute=require("./router/cartRoute.js")
 let port=4000
 
 
@@ -35,6 +38,9 @@ app.use("/categories",categoryRoute)
 app.use("/running",runningRoute)
 app.use("/course",courseRoute)
 app.use("/student",studentRoute)
+app.use("/user-ecommerce",userEcommerceRoute)
+app.use("/product-ecommerce",productEcommerceRoute)
+app.use("/cart-ecommerce",cartEcommerceRoute)
 app.use((req,res)=>{
     res.status(404).send(`<h1>404 - Page Not Found.</h1>`);
 })
