@@ -1,5 +1,5 @@
 const express=require("express");
-const {  courses } = require("../constants");
+const {  courses } = require("../data/studentsData");
 const router=express.Router();
 
 router.get("/",(req,res)=>{

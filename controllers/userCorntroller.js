@@ -1,5 +1,13 @@
+const userService=require("../services/userServices.js")
 const getUser=(req,res)=>{
-    res.send("Fetching all users")
+    // res.send("Fetching all users")
+    let users;
+    users=userService.readingDatafromFile()
+     users=userService.sortingValueUsingParam(req.query,users)   
+    res.send(users)
+
+
+
 }
 
 const getUserById=(req,res)=>{
