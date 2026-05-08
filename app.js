@@ -26,7 +26,7 @@ app.use(express.json())
 //     req.user="himesh"
 //     next()
 //  })
-
+app.use(express.static('public'))
 
 //routes
 app.use("/",homeRoute)

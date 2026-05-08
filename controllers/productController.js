@@ -10,7 +10,7 @@ const getProductById=(req,res)=>{
 
 
 const addNewProduct=(req,res)=>{
-    productServices.addProduct(res)
+    productServices.addProduct(req,res)
 }
 
 
