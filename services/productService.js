@@ -1,5 +1,7 @@
+const path=require("path");
+
 const readProductData=(res)=>{
-   return res.send("Fetching all  products")
+   return res.sendFile(path.join(__dirname,"..","view","product.html"))
 }
 const productById=(res,id)=>{
    return res.send(`Fetching product with ID: ${id}`)
